@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Snooker Score Keeper</string>
+    <string name="player_1">PLAYER 1</string>
+    <string name="player_2">PLAYER 2</string>
+    <string name="break_string">BREAK</string>
+    <string name="max_break">MAX BREAK</string>
+    <string name="foul">FOUL</string>
+    <string name="new_game">NEW GAME</string>
+</resources>

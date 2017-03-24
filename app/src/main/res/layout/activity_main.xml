@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:gravity="bottom"
+    android:orientation="vertical"
+    tools:context="com.example.alberto.snookerscorekeeper.MainActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/player1"
+            style="@style/Player"
+            android:imeOptions="actionNext"
+            android:nextFocusForward="@+id/player2"
+            android:text="@string/player_1" />
+
+        <EditText
+            android:id="@id/player2"
+            style="@style/Player"
+            android:imeOptions="actionDone"
+            android:text="@string/player_2" />
+
+    </LinearLayout>
+
+    <RadioGroup
+        android:id="@+id/radio_group"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="12dp"
+        android:layout_weight="1"
+        android:background="@drawable/radio_separator"
+        android:checkedButton="@+id/score_1"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@id/score_1"
+            style="@style/PointText"
+            android:onClick="changePlayer" />
+
+        <RadioButton
+            android:id="@+id/score_2"
+            style="@style/PointText"
+            android:onClick="changePlayer" />
+
+    </RadioGroup>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/break_1"
+            style="@style/Break"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:gravity="end|center_vertical" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/break_string"
+            android:textColor="@color/black"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/break_2"
+            style="@style/Break"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
+            android:gravity="start|center_vertical" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp">
+
+        <TextView
+            android:id="@+id/max_break_1"
+            style="@style/MaxBreak"
+            android:gravity="end|center_vertical" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/max_break"
+            android:textColor="@color/black"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/max_break_2"
+            style="@style/MaxBreak"
+            android:gravity="start|center_vertical" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="-8dp"
+        android:baselineAligned="false">
+
+        <Space style="@style/Space" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/button_red"
+                style="@style/PointButton"
+                android:background="@drawable/custom_button_red" />
+
+            <Button
+                android:id="@+id/button_green"
+                style="@style/PointButton"
+                android:background="@drawable/custom_button_green" />
+
+            <Button
+                android:id="@+id/button_blue"
+                style="@style/PointButton"
+                android:background="@drawable/custom_button_blue" />
+
+            <Button
+                android:id="@+id/button_black"
+                style="@style/PointButton"
+                android:background="@drawable/custom_button_black"
+                android:textColor="@android:color/white" />
+
+        </LinearLayout>
+
+        <Space style="@style/Space" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/button_yellow"
+                style="@style/PointButton"
+                android:background="@drawable/custom_button_yellow" />
+
+            <Button
+                android:id="@+id/button_brown"
+                style="@style/PointButton"
+                android:background="@drawable/custom_button_brown" />
+
+            <Button
+                android:id="@+id/button_pink"
+                style="@style/PointButton"
+                android:background="@drawable/custom_button_pink" />
+
+            <ToggleButton
+                android:id="@+id/toggle_foul"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/custom_toggle_foul"
+                android:textOn="@string/foul"
+                android:textOff="@string/foul"
+                android:textSize="24sp" />
+
+        </LinearLayout>
+
+        <Space style="@style/Space" />
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:background="@drawable/button_max_break"
+        android:onClick="newGame"
+        android:text="@string/new_game"
+        android:textColor="@android:color/black" />
+
+</LinearLayout>
