@@ -15,11 +15,20 @@ public class MainActivity extends AppCompatActivity {
     int[][] stats = new int[3][2];
     int[][] buttonClicks = new int[7][2];
     int playerInUse;
+    ToggleButton foulButton;
+    RadioGroup groupScore;
+    TextView name1;
+    TextView name2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        foulButton = (ToggleButton) findViewById(R.id.toggle_foul);
+        groupScore = (RadioGroup) findViewById(R.id.radio_group);
+        name1 = (TextView) findViewById(R.id.player1);
+        name2 = (TextView) findViewById(R.id.player2);
 
         buttonsId[0] = R.id.button_red;
         buttonsId[1] = R.id.button_yellow;
@@ -52,7 +61,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void onButtonClick(View v) {
         int buttonColor = 0;
-        ToggleButton foulButton = (ToggleButton) findViewById(R.id.toggle_foul);
         boolean foul = foulButton.isChecked();
         while (v.getId() != buttonsId[buttonColor]) {
             buttonColor++;
@@ -61,7 +69,6 @@ public class MainActivity extends AppCompatActivity {
             if (buttonColor >= 3) {
                 foulButton.setChecked(false);
                 playerInUse = (playerInUse - 1) * - 1;
-                RadioGroup groupScore = (RadioGroup) findViewById(R.id.radio_group);
                 groupScore.check(statsId[0][playerInUse]);
                 changeButtonPlayer();
             }
@@ -106,9 +113,7 @@ public class MainActivity extends AppCompatActivity {
                 display(buttonsId[i], 0);
             }
         }
-        TextView text = (TextView) findViewById(R.id.player1);
-        text.setText(R.string.player_1);
-        text = (TextView) findViewById(R.id.player2);
-        text.setText(R.string.player_2);
+        name1.setText(R.string.player_1);
+        name2.setText(R.string.player_2);
     }
 }
